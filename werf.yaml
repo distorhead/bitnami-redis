@@ -1,0 +1,17 @@
+project: bitnami-redis
+configVersion: 1
+---
+image: redis
+from: bitnami/redis:6.2.6-debian-10-r179
+---
+image: sentinel
+from: bitnami/redis-sentinel:6.2.6-debian-10-r176
+---
+image: metrics
+from: bitnami/redis-exporter:1.37.0-debian-10-r18
+---
+image: volumePermissions
+from: bitnami/bitnami-shell:10-debian-10-r387
+---
+image: sysctl
+from: bitnami/bitnami-shell:10-debian-10-r387

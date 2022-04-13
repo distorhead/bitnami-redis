@@ -4,35 +4,35 @@
 Return the proper Redis image name
 */}}
 {{- define "redis.image" -}}
-{{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
+{{ .Values.werf.image.redis }}
 {{- end -}}
 
 {{/*
 Return the proper Redis Sentinel image name
 */}}
 {{- define "redis.sentinel.image" -}}
-{{ include "common.images.image" (dict "imageRoot" .Values.sentinel.image "global" .Values.global) }}
+{{ .Values.werf.image.sentinel }}
 {{- end -}}
 
 {{/*
 Return the proper image name (for the metrics image)
 */}}
 {{- define "redis.metrics.image" -}}
-{{ include "common.images.image" (dict "imageRoot" .Values.metrics.image "global" .Values.global) }}
+{{ .Values.werf.image.metrics }}
 {{- end -}}
 
 {{/*
 Return the proper image name (for the init container volume-permissions image)
 */}}
 {{- define "redis.volumePermissions.image" -}}
-{{ include "common.images.image" (dict "imageRoot" .Values.volumePermissions.image "global" .Values.global) }}
+{{ .Values.werf.image.volumePermissions }}
 {{- end -}}
 
 {{/*
 Return sysctl image
 */}}
 {{- define "redis.sysctl.image" -}}
-{{ include "common.images.image" (dict "imageRoot" .Values.sysctl.image "global" .Values.global) }}
+{{ .Values.werf.image.sysctl }}
 {{- end -}}
 
 {{/*
